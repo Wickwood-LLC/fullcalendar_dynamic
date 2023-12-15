@@ -1,0 +1,9 @@
+name: Fullcalendar View Enhanced
+type: module
+description: 'To present contents in FullCalendar view.'
+package: Views
+core_version_requirement: ^9.5 || ^10
+
+dependencies:
+  - drupal:views
+  - drupal:datetime
