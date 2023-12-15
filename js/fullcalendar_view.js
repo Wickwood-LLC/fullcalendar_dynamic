@@ -32,13 +32,6 @@
         eventListTitleEle[0].innerHTML = info.event.title;
       }
     }
-    // Show Tooltip on Mousehover
-    let thisEvent = info.event;
-    let des   = thisEvent.extendedProps.des;
-    let title = thisEvent.extendedProps.regular_title;
-    if(des.length > 0) {
-      $(info.el).fullCalendarTooltip(title, des);
-    }
   }
   /**
    * Event resize handler
