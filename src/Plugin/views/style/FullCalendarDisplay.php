@@ -609,6 +609,7 @@ class FullCalendarDisplay extends StylePluginBase {
   }
 
   /**
+   * {@inheritdoc}
    * Should the output of the style plugin be rendered even if it's a empty view.
    */
   public function evenEmpty() {
