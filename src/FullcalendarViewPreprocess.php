@@ -154,10 +154,10 @@ class FullcalendarViewPreprocess {
       ];
 
       // Load the fullcalendar js library.
-      $variables['#attached']['library'][] = 'fullcalendar_view/fullcalendar';
+      $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/fullcalendar';
       if ($options['dialogWindow']) {
         // Load the JS library for dialog.
-        $variables['#attached']['library'][] = 'fullcalendar_view/libraries.jsframe';
+        $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/libraries.jsframe';
       }
       $variables['view_index'] = $view_index;
       // View name.
