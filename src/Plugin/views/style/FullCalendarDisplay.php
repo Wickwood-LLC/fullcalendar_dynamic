@@ -3,7 +3,7 @@
 namespace Drupal\fullcalendar_view_enhanced\Plugin\views\style;
 
 use Drupal\field\Entity\FieldStorageConfig;
-use Drupal\fullcalendar_view\TaxonomyColor;
+use Drupal\fullcalendar_view_enhanced\TaxonomyColor;
 use Drupal\core\form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
 use Drupal\Component\Utility\Xss;
@@ -56,7 +56,7 @@ class FullCalendarDisplay extends StylePluginBase {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static($configuration, $plugin_id, $plugin_definition, $container->get('fullcalendar_view.taxonomy_color'));
+    return new static($configuration, $plugin_id, $plugin_definition, $container->get('fullcalendar_view_enhanced.taxonomy_color'));
   }
 
   /**
@@ -594,7 +594,7 @@ class FullCalendarDisplay extends StylePluginBase {
   public static function taxonomyColorCallback(array &$form, FormStateInterface $form_state) {
     $options = $form_state->getValue('style_options');
     $vid = $options['vocabularies'];
-    $taxonomy_color_service = \Drupal::service('fullcalendar_view.taxonomy_color');
+    $taxonomy_color_service = \Drupal::service('fullcalendar_view_enhanced.taxonomy_color');
 
     if (isset($options['color_taxonomies'])) {
       $defaultValues = $options['color_taxonomies'];

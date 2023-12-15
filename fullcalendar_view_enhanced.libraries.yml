@@ -58,9 +58,9 @@ libraries.fullcalendar:
     /libraries/fullcalendar/list/main.min.js: { minified: true }
     /libraries/fullcalendar/rrule/main.min.js: { minified: true }
   dependencies:
-    - fullcalendar_view/libraries.fullcalendar-theme
-    - fullcalendar_view/libraries.moment
-    - fullcalendar_view/libraries.rrule
+    - fullcalendar_view_enhanced/libraries.fullcalendar-theme
+    - fullcalendar_view_enhanced/libraries.moment
+    - fullcalendar_view_enhanced/libraries.rrule
 
 libraries.jsframe:
   remote: https://github.com/riversun/JSFrame.js
@@ -82,4 +82,4 @@ fullcalendar:
     - core/jquery
     - core/drupalSettings
     - core/drupal.dialog.ajax
-    - fullcalendar_view/libraries.fullcalendar
+    - fullcalendar_view_enhanced/libraries.fullcalendar

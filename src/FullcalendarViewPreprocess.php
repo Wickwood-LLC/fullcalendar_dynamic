@@ -252,7 +252,7 @@ class FullcalendarViewPreprocess {
     }
 
     // Timezone conversion service.
-    $timezone_service = \Drupal::service('fullcalendar_view.timezone_conversion_service');
+    $timezone_service = \Drupal::service('fullcalendar_view_enhanced.timezone_conversion_service');
 
     $entries = [];
     foreach ($view->result as $row) {

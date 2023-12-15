@@ -130,7 +130,7 @@ class CalendarEventSourceController extends ViewAjaxController {
         }
 
         // Fullcalendar View preprocess service.
-        $preprocess_service = \Drupal::service('fullcalendar_view.view_preprocess');
+        $preprocess_service = \Drupal::service('fullcalendar_view_enhanced.view_preprocess');
         $events_data = $preprocess_service->prepareEntries($view);
   
 
