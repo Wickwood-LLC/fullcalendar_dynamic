@@ -3,10 +3,12 @@
 use Drupal\fullcalendar_view_enhanced\Plugin\views\style\FullCalendarDisplay;
 use Drupal\views\ViewExecutable;
 
+\Drupal::moduleHandler()->loadInclude('fullcalendar_view_enhanced', 'inc', 'fullcalendar_view_enhanced.theme');
+
 /**
  * Implements hook_views_post_build()
  */
-function fullcalendar_view_views_post_build(ViewExecutable $view) {
+function fullcalendar_view_enhanced_views_post_build(ViewExecutable $view) {
   if ($view->style_plugin instanceof FullCalendarDisplay && \Drupal::routeMatch()->getRouteName() != 'fullcalendar_view_enhanced.event_source') {
     // No need to fetch event contents unless the Fullcalendar views being executed over Ajax as event source.
     // In fact, we don't need to fetch any content at all here.

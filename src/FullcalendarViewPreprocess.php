@@ -131,7 +131,7 @@ class FullcalendarViewPreprocess {
         'eventOverlap' => $options['allowEventOverlap'] !== 0,
         'eventSources' => [
           [
-            'url' => Url::fromRoute('fullcalendar_view.event_source')->toString(),
+            'url' => Url::fromRoute('fullcalendar_view_enhanced.event_source')->toString(),
             'method' => 'POST',
           ]
         ]
