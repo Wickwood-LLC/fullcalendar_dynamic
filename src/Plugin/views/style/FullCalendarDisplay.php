@@ -70,6 +70,9 @@ class FullCalendarDisplay extends StylePluginBase {
     $options['end'] = ['default' => ''];
     $options['title'] = ['default' => ''];
     $options['short_title'] = ['default' => ''];
+    $options['tooltip_content'] = ['default' => ''];
+    $options['tooltip_title'] = ['default' => ''];
+    $options['tooltip_theme'] = ['default' => ''];
     $options['date_filter'] = ['default' => ''];
     $options['duration'] = ['default' => ''];
     $options['rrule'] = ['default' => ''];
@@ -178,6 +181,37 @@ class FullCalendarDisplay extends StylePluginBase {
       '#options' => $field_names,
       '#default_value' => (!empty($this->options['short_title'])) ? $this->options['short_title'] : '',
     ];
+
+    // Field name of tooltip_title.
+    $form['tooltip_title'] = [
+      '#title' => $this->t('Tooltip Title Field'),
+      '#type' => 'select',
+      '#options' => $field_names,
+      '#empty_value' => '',
+      '#default_value' => (!empty($this->options['tooltip_title'])) ? $this->options['tooltip_title'] : '',
+    ];
+    // Field name of tooltip_content.
+    $form['tooltip_content'] = [
+      '#title' => $this->t('Tooltip Content Field'),
+      '#type' => 'select',
+      '#options' => $field_names,
+      '#empty_value' => '',
+      '#default_value' => (!empty($this->options['tooltip_content'])) ? $this->options['tooltip_content'] : '',
+    ];
+
+    $form['tooltip_theme'] = [
+      '#title' => $this->t('Tooltip Theme'),
+      '#type' => 'select',
+      '#options' => [
+        'light' => $this->t('Light'),
+        'light-border' => $this->t('Light-Border'),
+        'material' => $this->t('Material'),
+        'translucent' => $this->t('Translucent'),
+      ],
+      '#empty_value' => '',
+      '#default_value' => (!empty($this->options['tooltip_theme'])) ? $this->options['tooltip_theme'] : '',
+    ];
+
     // Display settings.
     $form['display'] = [
       '#type' => 'details',
