@@ -74,6 +74,92 @@ libraries.jsframe:
   js:
     /libraries/JSFrame/1.5.16/jsframe.min.js: { minified: true }
 
+libraries.popperjs:
+  remote: https://github.com/floating-ui/floating-ui
+  version: '6.3.7'
+  license:
+    name: MIT
+    url: https://github.com/riversun/JSFrame.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    https://unpkg.com/@popperjs/core@2
+  js:
+    /libraries/popperjs/dist/umd/popper.min.js: { minified: true }
+
+libraries.tippyjs:
+  remote: https://github.com/atomiks/tippyjs
+  version: '6.3.7'
+  license:
+    name: MIT
+    url: https://github.com/riversun/JSFrame.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    https://unpkg.com/tippy.js@6
+  js:
+    /libraries/tippy.js/dist/tippy-bundle.umd.min.js: { minified: true }
+  dependencies:
+    - fullcalendar_view_enhanced/libraries.popperjs
+
+libraries.tippyjs-light:
+  remote: https://github.com/atomiks/tippyjs
+  version: '6.3.7'
+  license:
+    name: MIT
+    url: https://github.com/riversun/JSFrame.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    https://unpkg.com/tippy.js@6/themes/light.css
+  css:
+    component:
+      /libraries/tippy.js/themes/light.css: { minified: true }
+  dependencies:
+    - fullcalendar_view_enhanced/libraries.tippyjs
+
+libraries.tippyjs-light-border:
+  remote: https://github.com/atomiks/tippyjs
+  version: '6.3.7'
+  license:
+    name: MIT
+    url: https://github.com/riversun/JSFrame.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    https://unpkg.com/tippy.js@6/themes/light-border.css
+  css:
+    component:
+      /libraries/tippy.js/themes/light-border.css: { minified: true }
+  dependencies:
+    - fullcalendar_view_enhanced/libraries.tippyjs
+
+libraries.tippyjs-material:
+  remote: https://github.com/atomiks/tippyjs
+  version: '6.3.7'
+  license:
+    name: MIT
+    url: https://github.com/riversun/JSFrame.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    https://unpkg.com/tippy.js@6/themes/material.css
+  css:
+    component:
+      /libraries/tippy.js/themes/material.css: { minified: true }
+  dependencies:
+    - fullcalendar_view_enhanced/libraries.tippyjs
+
+libraries.tippyjs-translucent:
+  remote: https://github.com/atomiks/tippyjs
+  version: '6.3.7'
+  license:
+    name: MIT
+    url: https://github.com/riversun/JSFrame.js/blob/master/LICENSE
+    gpl-compatible: true
+  cdn:
+    https://unpkg.com/tippy.js@6/themes/translucent.css
+  css:
+    component:
+      /libraries/tippy.js/themes/translucent.css: { minified: true }
+  dependencies:
+    - fullcalendar_view_enhanced/libraries.tippyjs
+
 # Feature libraries.
 fullcalendar:
   js:

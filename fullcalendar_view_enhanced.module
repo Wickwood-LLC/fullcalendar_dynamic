@@ -27,6 +27,38 @@ function fullcalendar_view_enhanced_library_info_alter(array &$libraries, $modul
     if ($cdn_library) {
       $libraries['libraries.rrule']['js'] = $cdn_library;
     }
+    // popperjs
+    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.popperjs', 'js');
+    if ($cdn_library) {
+      $libraries['libraries.popperjs']['js'] = $cdn_library;
+    }
+    // tippyjs
+    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs', 'js');
+    if ($cdn_library) {
+      $libraries['libraries.tippyjs']['js'] = $cdn_library;
+    }
+
+    // tippyjs-light
+    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-light', 'css');
+    if ($cdn_library) {
+      $libraries['libraries.tippyjs-light']['css']['component'] = $cdn_library;
+    }
+    // tippyjs-light-border
+    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-light-border', 'css');
+    if ($cdn_library) {
+      $libraries['libraries.tippyjs-light-border']['css']['component'] = $cdn_library;
+    }
+    // tippyjs-material
+    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-material', 'css');
+    if ($cdn_library) {
+      $libraries['libraries.tippyjs-material']['css']['component'] = $cdn_library;
+    }
+    // tippyjs-translucent
+    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-translucent', 'css');
+    if ($cdn_library) {
+      $libraries['libraries.tippyjs-translucent']['css']['component'] = $cdn_library;
+    }
+
     // Fullcalendar default theme.
     $cdn_library = _fullcalendar_view_enhanced_use_cdn($libraries, 'libraries.fullcalendar-theme', 'css');
     if ($cdn_library) {
