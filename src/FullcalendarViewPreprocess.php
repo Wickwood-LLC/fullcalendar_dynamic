@@ -205,6 +205,14 @@ class FullcalendarViewPreprocess {
         // overridden the display's pager_element.
         'pager_element' => isset($view->pager) ? $view->pager->getPagerId() : 0,
       ];
+      if (!empty($options['tooltip_title']) || !empty($options['tooltip_content'])) {
+        $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/libraries.tippyjs';
+        if (!empty($options['tooltip_theme'])) {
+          // Load tippy.js theme library for selected tippy.js theme.
+          $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/libraries.tippyjs-' . $options['tooltip_theme'];
+          $variables['#attached']['drupalSettings']['fullCalendarView'][$view_index]['tooltip_theme'] = $options['tooltip_theme'];
+        }
+      }
     }
   }
 
@@ -323,6 +331,20 @@ class FullcalendarViewPreprocess {
         $short_title = t('Invalid event short title');
       }
 
+      $tooltip = NULL;
+      if (!empty($options['tooltip_title']) || !empty($options['tooltip_content'])) {
+        $tooltip_data = [
+          '#theme' => 'fullcalendar_view_enhanced_tooltip',
+        ];
+        if (!empty($options['tooltip_title'])) {
+          $tooltip_data['#title'] = $fields[$options['tooltip_title']]->advancedRender($row);
+        }
+        if (!empty($options['tooltip_content'])) {
+          $tooltip_data['#body'] = $fields[$options['tooltip_content']]->advancedRender($row);
+        }
+        $tooltip =  \Drupal::service('renderer')->render($tooltip_data);
+      }
+
       $link_url = strstr($title, 'href="');
       if ($link_url) {
         $link_url = substr($link_url, 6);
@@ -339,6 +361,7 @@ class FullcalendarViewPreprocess {
           $entry = [
             'title' =>  Xss::filter($short_title, $title_allowed_tags),
             'regular_title' =>  Xss::filter($title, $title_allowed_tags),
+            'tooltip' => $tooltip,
             'id' => $idkey,
             'eid' => $entity_id,
             'url' => $link_url,

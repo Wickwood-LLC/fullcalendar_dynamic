@@ -32,6 +32,24 @@
         eventListTitleEle[0].innerHTML = info.event.title;
       }
     }
+    if (info.event.extendedProps.tooltip) {
+      let viewIndex = parseInt(this.el.getAttribute("calendar-view-index"));
+      let viewSettings = drupalSettings.fullCalendarView[viewIndex];
+      let tippy_data = {
+        content: info.event.extendedProps.tooltip,
+        allowHTML: true,
+        hideOnClick: true,
+        // To make it not hide soon after mouse out of event.
+        interactive: true,
+        //  To avoid issues with positioning, as interactive is set to true above.
+        appendTo: () => document.body,
+        theme: 'material',
+      }
+      if (drupalSettings.fullCalendarView[viewIndex].tooltip_theme) {
+        tippy_data.theme = drupalSettings.fullCalendarView[viewIndex].tooltip_theme;
+      }
+      tippy(info.el, tippy_data);
+    }
   }
   /**
    * Event resize handler
