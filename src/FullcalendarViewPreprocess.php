@@ -320,17 +320,6 @@ class FullcalendarViewPreprocess {
         $title = t('Invalid event title');
       }
 
-      // Event short title.
-      if (empty($options['short_title']) || $options['short_title'] == 'title') {
-        $short_title = $fields['title']->advancedRender($row);
-      }
-      elseif (!empty($fields[$options['short_title']])) {
-        $short_title = $fields[$options['short_title']]->advancedRender($row);
-      }
-      else {
-        $short_title = t('Invalid event short title');
-      }
-
       $tooltip = NULL;
       if (!empty($options['tooltip_title']) || !empty($options['tooltip_content'])) {
         $tooltip_data = [
@@ -359,8 +348,7 @@ class FullcalendarViewPreprocess {
         foreach ($start_dates as $i => $start_date) {
           $idkey = $row->index . '-' . $i;
           $entry = [
-            'title' =>  Xss::filter($short_title, $title_allowed_tags),
-            'regular_title' =>  Xss::filter($title, $title_allowed_tags),
+            'title' =>  Xss::filter($title, $title_allowed_tags),
             'tooltip' => $tooltip,
             'id' => $idkey,
             'eid' => $entity_id,

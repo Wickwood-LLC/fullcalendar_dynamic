@@ -69,7 +69,6 @@ class FullCalendarDisplay extends StylePluginBase {
     $options['start'] = ['default' => ''];
     $options['end'] = ['default' => ''];
     $options['title'] = ['default' => ''];
-    $options['short_title'] = ['default' => ''];
     $options['tooltip_content'] = ['default' => ''];
     $options['tooltip_title'] = ['default' => ''];
     $options['tooltip_theme'] = ['default' => ''];
@@ -173,13 +172,6 @@ class FullCalendarDisplay extends StylePluginBase {
       '#options' => $field_names,
       '#empty_value' => '',
       '#default_value' => (!empty($this->options['date_filter'])) ? $this->options['date_filter'] : '',
-    ];
-    // Field name of short_title.
-    $form['short_title'] = [
-      '#title' => $this->t('Short Title Field'),
-      '#type' => 'select',
-      '#options' => $field_names,
-      '#default_value' => (!empty($this->options['short_title'])) ? $this->options['short_title'] : '',
     ];
 
     // Field name of tooltip_title.
