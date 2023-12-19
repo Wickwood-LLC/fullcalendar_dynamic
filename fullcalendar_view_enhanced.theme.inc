@@ -5,6 +5,20 @@
  * Theme for Full Calendar views.
  */
 
+ /**
+  * Implements hook_theme()
+  */
+function fullcalendar_view_enhanced_theme() {
+  return [
+    'fullcalendar_view_enhanced_tooltip' => [
+      'variables' => [
+        'title' => NULL,
+        'body' => NULL,
+      ],
+    ],
+  ];
+}
+
 /**
  * Implement fullcalendar view theme preprocess function.
  *
