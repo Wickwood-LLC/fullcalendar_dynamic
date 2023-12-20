@@ -170,8 +170,9 @@ class FullCalendar extends StylePluginBase {
       '#title' => $this->t('Date Field for Filtering'),
       '#type' => 'select',
       '#options' => $field_names,
-      '#empty_value' => '',
+      '#required' => TRUE,
       '#default_value' => (!empty($this->options['date_filter'])) ? $this->options['date_filter'] : '',
+      '#description' => $this->t('Make sure you select a datetime field.')
     ];
 
     // Field name of tooltip_title.
