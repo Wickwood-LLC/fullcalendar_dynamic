@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   display_types = { "fullcalendar" }
  * )
  */
-class FullCalendarDisplay extends StylePluginBase {
+class FullCalendar extends StylePluginBase {
 
   /**
    * Does the style plugin for itself support to add fields to it's output.
@@ -484,7 +484,7 @@ class FullCalendarDisplay extends StylePluginBase {
           ],
         ],
         '#ajax' => [
-          'callback' => 'Drupal\fullcalendar_view\Plugin\views\style\FullCalendarDisplay::taxonomyColorCallback',
+          'callback' => 'Drupal\fullcalendar_view\Plugin\views\style\FullCalendar::taxonomyColorCallback',
           'event' => 'change',
           'wrapper' => 'color-taxonomies-div',
           'progress' => [
