@@ -18,10 +18,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @ViewsStyle(
  *   id = "fullcalendar_view_enhanced_display",
- *   title = @Translation("Full Calendar Display (Enhanced)"),
+ *   title = @Translation("Full Calendar Display"),
  *   help = @Translation("Render contents in Full Calendar view."),
  *   theme = "views_view_fullcalendar_enanced",
- *   display_types = { "normal" }
+ *   display_types = { "fullcalendar" }
  * )
  */
 class FullCalendarDisplay extends StylePluginBase {
