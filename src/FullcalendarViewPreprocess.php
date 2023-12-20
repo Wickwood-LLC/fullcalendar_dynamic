@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fullcalendar_view_enhanced;
+namespace Drupal\fullcalendar_dynamic;
 
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -131,7 +131,7 @@ class FullcalendarViewPreprocess {
         'eventOverlap' => $options['allowEventOverlap'] !== 0,
         'eventSources' => [
           [
-            'url' => Url::fromRoute('fullcalendar_view_enhanced.event_source')->toString(),
+            'url' => Url::fromRoute('fullcalendar_dynamic.event_source')->toString(),
             'method' => 'POST',
           ]
         ]
@@ -154,10 +154,10 @@ class FullcalendarViewPreprocess {
       ];
 
       // Load the fullcalendar js library.
-      $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/fullcalendar';
+      $variables['#attached']['library'][] = 'fullcalendar_dynamic/fullcalendar';
       if ($options['dialogWindow']) {
         // Load the JS library for dialog.
-        $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/libraries.jsframe';
+        $variables['#attached']['library'][] = 'fullcalendar_dynamic/libraries.jsframe';
       }
       $variables['view_index'] = $view_index;
       // View name.
@@ -206,10 +206,10 @@ class FullcalendarViewPreprocess {
         'pager_element' => isset($view->pager) ? $view->pager->getPagerId() : 0,
       ];
       if (!empty($options['tooltip_title']) || !empty($options['tooltip_content'])) {
-        $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/libraries.tippyjs';
+        $variables['#attached']['library'][] = 'fullcalendar_dynamic/libraries.tippyjs';
         if (!empty($options['tooltip_theme'])) {
           // Load tippy.js theme library for selected tippy.js theme.
-          $variables['#attached']['library'][] = 'fullcalendar_view_enhanced/libraries.tippyjs-' . $options['tooltip_theme'];
+          $variables['#attached']['library'][] = 'fullcalendar_dynamic/libraries.tippyjs-' . $options['tooltip_theme'];
           $variables['#attached']['drupalSettings']['fullCalendarView'][$view_index]['tooltip_theme'] = $options['tooltip_theme'];
         }
       }
@@ -260,7 +260,7 @@ class FullcalendarViewPreprocess {
     }
 
     // Timezone conversion service.
-    $timezone_service = \Drupal::service('fullcalendar_view_enhanced.timezone_conversion_service');
+    $timezone_service = \Drupal::service('fullcalendar_dynamic.timezone_conversion_service');
 
     $entries = [];
     foreach ($view->result as $row) {
@@ -323,7 +323,7 @@ class FullcalendarViewPreprocess {
       $tooltip = NULL;
       if (!empty($options['tooltip_title']) || !empty($options['tooltip_content'])) {
         $tooltip_data = [
-          '#theme' => 'fullcalendar_view_enhanced_tooltip',
+          '#theme' => 'fullcalendar_dynamic_tooltip',
         ];
         if (!empty($options['tooltip_title'])) {
           $tooltip_data['#title'] = $fields[$options['tooltip_title']]->advancedRender($row);

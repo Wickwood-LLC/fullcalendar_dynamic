@@ -1,71 +1,71 @@
 <?php
 
-use Drupal\fullcalendar_view_enhanced\Plugin\views\style\FullCalendar;
+use Drupal\fullcalendar_dynamic\Plugin\views\style\FullCalendar;
 use Drupal\views\ViewExecutable;
 
-\Drupal::moduleHandler()->loadInclude('fullcalendar_view_enhanced', 'inc', 'fullcalendar_view_enhanced.theme');
+\Drupal::moduleHandler()->loadInclude('fullcalendar_dynamic', 'inc', 'fullcalendar_dynamic.theme');
 
 
 /**
  * Implements hook_library_info_alter().
  */
-function fullcalendar_view_enhanced_library_info_alter(array &$libraries, $module) {
-  if ('fullcalendar_view_enhanced' == $module) {
+function fullcalendar_dynamic_library_info_alter(array &$libraries, $module) {
+  if ('fullcalendar_dynamic' == $module) {
     // Use CDN instead of all local missing libraries.
     // JSFrame.js
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.jsframe', 'js');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.jsframe', 'js');
     if ($cdn_library) {
       $libraries['libraries.jsframe']['js'] = $cdn_library;
     }
     // Moment.js
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.moment', 'js');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.moment', 'js');
     if ($cdn_library) {
       $libraries['libraries.moment']['js'] = $cdn_library;
     }
     // RRule js.
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.rrule', 'js');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.rrule', 'js');
     if ($cdn_library) {
       $libraries['libraries.rrule']['js'] = $cdn_library;
     }
     // popperjs
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.popperjs', 'js');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.popperjs', 'js');
     if ($cdn_library) {
       $libraries['libraries.popperjs']['js'] = $cdn_library;
     }
     // tippyjs
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs', 'js');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.tippyjs', 'js');
     if ($cdn_library) {
       $libraries['libraries.tippyjs']['js'] = $cdn_library;
     }
 
     // tippyjs-light
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-light', 'css');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.tippyjs-light', 'css');
     if ($cdn_library) {
       $libraries['libraries.tippyjs-light']['css']['component'] = $cdn_library;
     }
     // tippyjs-light-border
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-light-border', 'css');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.tippyjs-light-border', 'css');
     if ($cdn_library) {
       $libraries['libraries.tippyjs-light-border']['css']['component'] = $cdn_library;
     }
     // tippyjs-material
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-material', 'css');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.tippyjs-material', 'css');
     if ($cdn_library) {
       $libraries['libraries.tippyjs-material']['css']['component'] = $cdn_library;
     }
     // tippyjs-translucent
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn_full_path($libraries, 'libraries.tippyjs-translucent', 'css');
+    $cdn_library = _fullcalendar_dynamic_use_cdn_full_path($libraries, 'libraries.tippyjs-translucent', 'css');
     if ($cdn_library) {
       $libraries['libraries.tippyjs-translucent']['css']['component'] = $cdn_library;
     }
 
     // Fullcalendar default theme.
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn($libraries, 'libraries.fullcalendar-theme', 'css');
+    $cdn_library = _fullcalendar_dynamic_use_cdn($libraries, 'libraries.fullcalendar-theme', 'css');
     if ($cdn_library) {
       $libraries['libraries.fullcalendar-theme']['css']['component'] = $cdn_library;
     }
     // Fullcalendar js.
-    $cdn_library = _fullcalendar_view_enhanced_use_cdn($libraries, 'libraries.fullcalendar', 'js');
+    $cdn_library = _fullcalendar_dynamic_use_cdn($libraries, 'libraries.fullcalendar', 'js');
     if ($cdn_library) {
       $libraries['libraries.fullcalendar']['js'] = $cdn_library;
     }
@@ -87,7 +87,7 @@ function fullcalendar_view_enhanced_library_info_alter(array &$libraries, $modul
  * @return array
  *   The new library array (CDN)
  */
-function _fullcalendar_view_enhanced_use_cdn(array $libraries, $library_name, $type, $replace_local = FALSE) {
+function _fullcalendar_dynamic_use_cdn(array $libraries, $library_name, $type, $replace_local = FALSE) {
   if (isset($libraries[$library_name])) {
     if (isset($libraries[$library_name][$type]) && isset($libraries[$library_name]['cdn'])) {
       $library_array = [];
@@ -140,7 +140,7 @@ function _fullcalendar_view_enhanced_use_cdn(array $libraries, $library_name, $t
  * @return array
  *   The new library array (CDN)
  */
-function _fullcalendar_view_enhanced_use_cdn_full_path(array $libraries, $library_name, $type, $replace_local = FALSE) {
+function _fullcalendar_dynamic_use_cdn_full_path(array $libraries, $library_name, $type, $replace_local = FALSE) {
   if (isset($libraries[$library_name])) {
     if (isset($libraries[$library_name][$type]) && isset($libraries[$library_name]['cdn'])) {
       $library_array = [];
@@ -178,8 +178,8 @@ function _fullcalendar_view_enhanced_use_cdn_full_path(array $libraries, $librar
 /**
  * Implements hook_views_post_build()
  */
-function fullcalendar_view_enhanced_views_post_build(ViewExecutable $view) {
-  if ($view->style_plugin instanceof FullCalendar && \Drupal::routeMatch()->getRouteName() != 'fullcalendar_view_enhanced.event_source') {
+function fullcalendar_dynamic_views_post_build(ViewExecutable $view) {
+  if ($view->style_plugin instanceof FullCalendar && \Drupal::routeMatch()->getRouteName() != 'fullcalendar_dynamic.event_source') {
     // No need to fetch event contents unless the Fullcalendar views being executed over Ajax as event source.
     // In fact, we don't need to fetch any content at all here.
     // But setting 0 will cause to load all items, 1 is the minimum value possible.

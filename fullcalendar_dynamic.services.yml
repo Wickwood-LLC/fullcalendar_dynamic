@@ -1,18 +1,18 @@
 services:
   # Timezone conversion service.
-  fullcalendar_view_enhanced.timezone_conversion_service:
-    class: Drupal\fullcalendar_view_enhanced\TimezoneService
+  fullcalendar_dynamic.timezone_conversion_service:
+    class: Drupal\fullcalendar_dynamic\TimezoneService
     
   # Taxonomy color service.
-  fullcalendar_view_enhanced.taxonomy_color:
-    class: Drupal\fullcalendar_view_enhanced\TaxonomyColor
+  fullcalendar_dynamic.taxonomy_color:
+    class: Drupal\fullcalendar_dynamic\TaxonomyColor
     arguments: ['@entity_type.manager']
     
   # View preprocess service.
-  fullcalendar_view_enhanced.view_preprocess:
-    class: Drupal\fullcalendar_view_enhanced\FullcalendarViewPreprocess
+  fullcalendar_dynamic.view_preprocess:
+    class: Drupal\fullcalendar_dynamic\FullcalendarViewPreprocess
     
   # View processor plugin.
-  plugin.manager.fullcalendar_view_enhanced_processor:
-    class: Drupal\fullcalendar_view_enhanced\Plugin\FullcalendarViewProcessorManager
+  plugin.manager.fullcalendar_dynamic_processor:
+    class: Drupal\fullcalendar_dynamic\Plugin\FullcalendarViewProcessorManager
     parent: default_plugin_manager

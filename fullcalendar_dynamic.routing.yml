@@ -1,9 +1,9 @@
 
 
 # Similar to 'views.ajax' route
-fullcalendar_view_enhanced.event_source:
+fullcalendar_dynamic.event_source:
   path: '/fullcalendar-view/events'
   defaults:
-    _controller: '\Drupal\fullcalendar_view_enhanced\Controller\CalendarEventSourceController::ajaxView'
+    _controller: '\Drupal\fullcalendar_dynamic\Controller\CalendarEventSourceController::ajaxView'
   requirements:
     _access: 'TRUE'

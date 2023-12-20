@@ -58,9 +58,9 @@ libraries.fullcalendar:
     /libraries/fullcalendar/list/main.min.js: { minified: true }
     /libraries/fullcalendar/rrule/main.min.js: { minified: true }
   dependencies:
-    - fullcalendar_view_enhanced/libraries.fullcalendar-theme
-    - fullcalendar_view_enhanced/libraries.moment
-    - fullcalendar_view_enhanced/libraries.rrule
+    - fullcalendar_dynamic/libraries.fullcalendar-theme
+    - fullcalendar_dynamic/libraries.moment
+    - fullcalendar_dynamic/libraries.rrule
 
 libraries.jsframe:
   remote: https://github.com/riversun/JSFrame.js
@@ -98,7 +98,7 @@ libraries.tippyjs:
   js:
     /libraries/tippy.js/dist/tippy-bundle.umd.min.js: { minified: true }
   dependencies:
-    - fullcalendar_view_enhanced/libraries.popperjs
+    - fullcalendar_dynamic/libraries.popperjs
 
 libraries.tippyjs-light:
   remote: https://github.com/atomiks/tippyjs
@@ -113,7 +113,7 @@ libraries.tippyjs-light:
     component:
       /libraries/tippy.js/themes/light.css: { minified: true }
   dependencies:
-    - fullcalendar_view_enhanced/libraries.tippyjs
+    - fullcalendar_dynamic/libraries.tippyjs
 
 libraries.tippyjs-light-border:
   remote: https://github.com/atomiks/tippyjs
@@ -128,7 +128,7 @@ libraries.tippyjs-light-border:
     component:
       /libraries/tippy.js/themes/light-border.css: { minified: true }
   dependencies:
-    - fullcalendar_view_enhanced/libraries.tippyjs
+    - fullcalendar_dynamic/libraries.tippyjs
 
 libraries.tippyjs-material:
   remote: https://github.com/atomiks/tippyjs
@@ -143,7 +143,7 @@ libraries.tippyjs-material:
     component:
       /libraries/tippy.js/themes/material.css: { minified: true }
   dependencies:
-    - fullcalendar_view_enhanced/libraries.tippyjs
+    - fullcalendar_dynamic/libraries.tippyjs
 
 libraries.tippyjs-translucent:
   remote: https://github.com/atomiks/tippyjs
@@ -158,7 +158,7 @@ libraries.tippyjs-translucent:
     component:
       /libraries/tippy.js/themes/translucent.css: { minified: true }
   dependencies:
-    - fullcalendar_view_enhanced/libraries.tippyjs
+    - fullcalendar_dynamic/libraries.tippyjs
 
 # Feature libraries.
 fullcalendar:
@@ -168,4 +168,4 @@ fullcalendar:
     - core/jquery
     - core/drupalSettings
     - core/drupal.dialog.ajax
-    - fullcalendar_view_enhanced/libraries.fullcalendar
+    - fullcalendar_dynamic/libraries.fullcalendar

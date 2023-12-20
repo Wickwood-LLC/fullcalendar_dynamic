@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fullcalendar_view_enhanced;
+namespace Drupal\fullcalendar_dynamic;
 
 /**
  * Class TimezoneService.

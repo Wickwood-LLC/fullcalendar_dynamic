@@ -8,9 +8,9 @@
  /**
   * Implements hook_theme()
   */
-function fullcalendar_view_enhanced_theme() {
+function fullcalendar_dynamic_theme() {
   return [
-    'fullcalendar_view_enhanced_tooltip' => [
+    'fullcalendar_dynamic_tooltip' => [
       'variables' => [
         'title' => NULL,
         'body' => NULL,
@@ -27,10 +27,10 @@ function fullcalendar_view_enhanced_theme() {
  */
 function template_preprocess_views_view_fullcalendar_enanced(array &$variables) {
   // Fullcalendar View preprocess service.
-  $preprocess_service = \Drupal::service('fullcalendar_view_enhanced.view_preprocess');
+  $preprocess_service = \Drupal::service('fullcalendar_dynamic.view_preprocess');
 
   // View processor plugins.
-  $processor_plugins = \Drupal::service('plugin.manager.fullcalendar_view_enhanced_processor');
+  $processor_plugins = \Drupal::service('plugin.manager.fullcalendar_dynamic_processor');
   // The list of available plugins:
   $plugin_definitions = $processor_plugins->getDefinitions();
 

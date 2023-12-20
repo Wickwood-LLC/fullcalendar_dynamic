@@ -1,9 +1,9 @@
 <?php
 
-namespace Drupal\fullcalendar_view_enhanced\Plugin\views\style;
+namespace Drupal\fullcalendar_dynamic\Plugin\views\style;
 
 use Drupal\field\Entity\FieldStorageConfig;
-use Drupal\fullcalendar_view_enhanced\TaxonomyColor;
+use Drupal\fullcalendar_dynamic\TaxonomyColor;
 use Drupal\core\form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
 use Drupal\Component\Utility\Xss;
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @ingroup views_style_plugins
  *
  * @ViewsStyle(
- *   id = "fullcalendar_view_enhanced_display",
+ *   id = "fullcalendar_dynamic_display",
  *   title = @Translation("Full Calendar Display"),
  *   help = @Translation("Render contents in Full Calendar view."),
  *   theme = "views_view_fullcalendar_enanced",
@@ -56,7 +56,7 @@ class FullCalendar extends StylePluginBase {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static($configuration, $plugin_id, $plugin_definition, $container->get('fullcalendar_view_enhanced.taxonomy_color'));
+    return new static($configuration, $plugin_id, $plugin_definition, $container->get('fullcalendar_dynamic.taxonomy_color'));
   }
 
   /**
@@ -621,7 +621,7 @@ class FullCalendar extends StylePluginBase {
   public static function taxonomyColorCallback(array &$form, FormStateInterface $form_state) {
     $options = $form_state->getValue('style_options');
     $vid = $options['vocabularies'];
-    $taxonomy_color_service = \Drupal::service('fullcalendar_view_enhanced.taxonomy_color');
+    $taxonomy_color_service = \Drupal::service('fullcalendar_dynamic.taxonomy_color');
 
     if (isset($options['color_taxonomies'])) {
       $defaultValues = $options['color_taxonomies'];

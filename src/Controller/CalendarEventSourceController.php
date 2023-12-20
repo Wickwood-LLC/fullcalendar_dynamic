@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fullcalendar_view_enhanced\Controller;
+namespace Drupal\fullcalendar_dynamic\Controller;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\EventSubscriber\AjaxResponseSubscriber;
@@ -130,7 +130,7 @@ class CalendarEventSourceController extends ViewAjaxController {
         }
 
         // Fullcalendar View preprocess service.
-        $preprocess_service = \Drupal::service('fullcalendar_view_enhanced.view_preprocess');
+        $preprocess_service = \Drupal::service('fullcalendar_dynamic.view_preprocess');
         $events_data = $preprocess_service->prepareEntries($view);
   
 

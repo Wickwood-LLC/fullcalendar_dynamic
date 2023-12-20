@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fullcalendar_view_enhanced\Plugin;
+namespace Drupal\fullcalendar_dynamic\Plugin;
 
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;

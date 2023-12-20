@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fullcalendar_view_enhanced\Plugin\views\display;
+namespace Drupal\fullcalendar_dynamic\Plugin\views\display;
 
 use Drupal\views\Plugin\views\display\Page;
 
