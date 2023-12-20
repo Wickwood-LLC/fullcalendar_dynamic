@@ -10,7 +10,7 @@ use Drupal\views\Plugin\views\display\Page;
  * @ingroup views_display_plugins
  *
  * @ViewsDisplay(
- *   id = "fullcalendar",
+ *   id = "fullcalendar_dynamic",
  *   title = @Translation("FullCalendar Page"),
  *   help = @Translation("Display the view as a fullcalendar view, with a URL and menu links."),
  *   uses_menu_links = TRUE,
@@ -32,6 +32,10 @@ class FullCalendarPage extends Page {
   protected function defineOptions() {
     $options = parent::defineOptions();
     $options['pager']['contains']['type']['default'] = 'none';
+
+    // Set the default style plugin to 'fullcalendar_dynamic'.
+    $options['style']['contains']['type']['default'] = 'fullcalendar_dynamic';
+    $options['defaults']['default']['style'] = FALSE;
     return $options;
   }
 
