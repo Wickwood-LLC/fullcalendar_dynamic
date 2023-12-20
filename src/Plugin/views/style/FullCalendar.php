@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @ingroup views_style_plugins
  *
  * @ViewsStyle(
- *   id = "fullcalendar_dynamic_display",
+ *   id = "fullcalendar_dynamic",
  *   title = @Translation("Full Calendar Display"),
  *   help = @Translation("Render contents in Full Calendar view."),
  *   theme = "views_view_fullcalendar_enanced",
