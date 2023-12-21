@@ -319,12 +319,14 @@
         };
       })
       calendarOptions.loading = function (isLoading) {
-        if (isLoading) {
-          this.setOption('noEventsMessage', 'Loading events...');
-        }
-        else {
-          // Restore back to original message.
-          this.setOption('noEventsMessage', 'No events to display');
+        if (this.state.viewType == 'listYear') {
+          if (isLoading) {
+            this.setOption('noEventsMessage', 'Loading events...');
+          }
+          else {
+            // Restore back to original message.
+            this.setOption('noEventsMessage', 'No events to display');
+          }
         }
       }
       // Language select element.
